@@ -1,0 +1,1 @@
+alert("Bienvenue sur ma boutique spécial Lyon ")

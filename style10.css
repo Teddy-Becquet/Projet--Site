@@ -1,0 +1,27 @@
+.divD{
+    float: left;
+    color:beige;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(165,42,132);
+    margin-left: 25px;
+}
+
+.divC{
+    float: left;
+    color:white;
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    margin-left: 25px;
+}
+
+.divB{
+    float: left;
+    color:beige;
+    font-size:200%;
+    width: 150px;
+    height: 150px;
+    background-color: rgb(165,42,132);
+    margin-left: 25px;
+}

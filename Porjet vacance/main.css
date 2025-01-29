@@ -22,14 +22,14 @@ body.dark-mode {
 }
 
 header {
-    background: #4CAF50;
+    background: #4400fd;
     color: white;
     padding: 15px 0;
     text-align: center;
 }
 
 header.dark-mode {
-    background: #1e1e1e;
+    background: #1a1a1a;
 }
 
 nav ul {
@@ -67,7 +67,7 @@ nav a.dark-mode {
 
 /* Style pour les sections avec animation de fondu */
 section {
-    background: white;
+    background: rgb(199, 193, 193);
     padding: 20px;
     margin: 20px 0;
     border-radius: 5px;
@@ -95,14 +95,14 @@ ul {
 .btn {
     display: inline-block;
     padding: 10px 15px;
-    background: #4CAF50;
+    background: #3106f5;
     color: white;
     text-decoration: none;
     border-radius: 5px;
 }
 
 .btn:hover {
-    background: #45a049;
+    background: #4908fc;
 }
 
 footer {

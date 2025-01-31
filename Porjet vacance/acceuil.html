@@ -14,7 +14,6 @@
                 <ul>
                     <li><a href="#Equipe">Equipe</a></li>
                     <li><a href="#Classement et déroulement">classement et déroulement</a></li>
-                    <li><a href="#Deroulement">déroulement</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -69,34 +68,8 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 Romain Ultis. Tous droits réservés.</p>
-    </footer>
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Sélectionner tous les éléments avec la classe "fade-in"
-        const fadeElements = document.querySelectorAll('.fade-in');
-
-        // Fonction pour vérifier si l'élément est visible
-        function checkVisibility() {
-            fadeElements.forEach(el => {
-                const rect = el.getBoundingClientRect();
-                const viewHeight = Math.min(window.innerHeight, document.documentElement.clientHeight);
-                
-                if (!(rect.bottom < 0 || rect.top - viewHeight >= 0)) {
-                    el.classList.add('visible');
-                }
-            });
-        }
-        // Appel de la fonction au chargement de la page
-        checkVisibility();
-
-        // Appel de la fonction lors du défilement
-        window.addEventListener('scroll', checkVisibility);
-    });
-
-    </script>
+   <scrip src="main.js"></script>
 
 </body>
+
 </html>

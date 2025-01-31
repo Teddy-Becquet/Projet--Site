@@ -1,19 +1,18 @@
-<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Futsal</title>
+    <title>Fusal</title>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Bienvenue sur le site pour le Futsal !</h1>
+            <h1>Bienvenue sur le site pour le futsal!</h1>
             <nav>
                 <ul>
                     <li><a href="#Equipe">Equipe</a></li>
-                    <li><a href="#Classement et déroulement">classement et déroulement</a></li>
+                    <li><a href="#Classementetdéroulement">Classement et Déroulement</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -22,36 +21,39 @@
 
     <main class="container">
         <section class="presentation fade-in">
-            <h2>Bienvenue sur le site pour le Futsal </h2>
-            <p> Je suis heureux de vous accueillir sur le site pour le futsal.<br>
+            <h2>Bienvenue sur le site pour le fusal de La Providence </h2>
+            <p> Sur ce site il y aura tout les score des match du futsal <br>
+                
+              
+                
+                <b>Vous trouverez tout ce qu'il faut savoir sur chaque équipe qui participe au tournois du mercredi midi.</b><br>
+
             </p>
         </section>
 
         <section id="Equipe" class="fade-in">
-            <h2><a href="http://192.168.65.127/sie%201/Porjet%20vacance/Equipe.html"><u>Equipe</u></a></h2>
-            <p>Voici les différents équipes qui participent a ce tournoix de futsal/p>
+            <h2><a href="Equipe.html"><u>Equipe</u></a></h2>
+            <p>A l'intérieur de cetter page vous trouverez le nom des équipes et les équide de foot qui les représente </p>
             <ul>
-                <li>Il y a un total de 7 équide différents </li>
-                <li>Chaque équipes a un minimum de 5 joueur pour pouvoir jouer les match </li>
-                <li>Les match se jouent le mercredi a partir de 12h45</li>
+                <li>-Les équipes qui participent sont tous dans le lycée des métier </li>
+                <li>-De la 3ème prépa métier au BTS 2ème année </li>
+                <li>-Les équipes sont composées de 5 joueurs et 2 remplaçants </li>
             </ul>
         </section>
 
-        <section id="classement et déroulement" class="fade-in">
-            <h2><a href="http://192.168.65.127/sie%201/Porjet%20vacance/classementetderoulement.html"><u>Classement</u></a></h2>
-            <p>Le classement est mise a jour chaque semaine </p>
+        <section id="Classementetdéroulement" class="fade-in">
+            <h2><a href="classementetderoulement.html"><u>Classement et Déroulement</u></a></h2>
+            <p>Vous trouverez le classement mise a jour toutes les semaines et le déroulement des matchs.</p>
             <ul>
-                <li>La différence de but est importante pour le classement finale </li>
-                <li>Une victoire vosu donne 3 points </li>
-                <li>Un match nul vous donne 1 point</li>
-                <li>Une défaite vous donne 0 point</li>
-                <p>Voici le déroulemeznt des match et du classement .</p>
-                <li>Chaque mercredi un match a lieux au gymnase a partir de 12h45</li>
-                <li>Les équipe s'affronte et Loic note le score pour ensuite lettre a jour le classement des équipes </li>
+                <li>-Le classement est mise a jour chaque semaine par Loic.</li>
+                <li>-Pour le déroulement des match chaque équipe de 5 joueur minimum </li>
+                <li>Chaque mercredi a 12h45 il faut être devant le gymnase et attendre Loic pour entrer et aller se changer </li>
+                <LI>-Chaque match dure 15 minutes et il y a 2 match par jour (aller et reour) </LI>
+                <li>-Chaque victoire vous raporte 3 pts, un nul raporte 1 pts et une defaite 0 pts</li>
             </ul>
         </section>
-    
-         <section id="contact" class="fade-in">
+
+        <section id="contact" class="fade-in">
             <h2>Contactez-moi</h2>
             <form>
                 <label for="nom">Nom :</label>
@@ -68,8 +70,33 @@
         </section>
     </main>
 
-   <scrip src="main.js"></script>
+    <footer>
+        <p>&copy; 2024 Romain Ultis. Tous droits réservés.</p>
+    </footer>
 
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Sélectionner tous les éléments avec la classe "fade-in"
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        // Fonction pour vérifier si l'élément est visible
+        function checkVisibility() {
+            fadeElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                const viewHeight = Math.min(window.innerHeight, document.documentElement.clientHeight);
+                
+                if (!(rect.bottom < 0 || rect.top - viewHeight >= 0)) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+
+        // Appel de la fonction au chargement de la page
+        checkVisibility();
+
+        // Appel de la fonction lors du défilement
+        window.addEventListener('scroll', checkVisibility);
+    });
+    </script>
 </body>
-
 </html>

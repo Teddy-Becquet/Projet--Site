@@ -2,18 +2,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fustal</title>
+    <title>Futsal de la Providence</title>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Bienvenue sur le site pour le futsal de la Providence!</h1>
+            <h1>Bienvenue sur le site du futsal de la Providence !</h1>
             <nav>
                 <ul>
-                    <li><a href="#Equipe">Equipe</a></li>
+                    <li><a href="#Equipe">Équipes</a></li>
                     <li><a href="#Classementetdéroulement">Classement et Déroulement</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#Calendrier">Calendrier</a></li>
                 </ul>
             </nav>
         </div>
@@ -21,63 +21,64 @@
 
     <main class="container">
         <section class="presentation fade-in">
-            <h2>Bienvenue sur le site pour le fusal de La Providence </h2>
-            <p> Sur ce site il y aura tout pour le futsal <br>
-                
-              
-                
-                <b>Vous trouverez tout ce qu'il faut savoir sur chaque équipe qui participe au tournois du mercredi midi.</b><br>
-
+            <h2>Bienvenue sur le site du futsal de La Providence</h2>
+            <p>
+                Sur ce site, vous trouverez toutes les informations relatives au futsal de La Providence.<br>
+                <b>Vous trouverez tout ce qu'il faut savoir sur chaque équipe participant au tournoi du mercredi midi.</b>
             </p>
         </section>
 
         <section id="Equipe" class="fade-in">
-            <h2><a href="Equipe.html"><u>Equipe</u></a></h2>
-            <p>A l'intérieur de cetter page vous trouverez le nom des équipes et les équide de foot qui les représente </p>
+            <h2><a href="Equipe.html"><u>Équipes</u></a></h2>
+            <p>Dans cette page, vous trouverez le nom des équipes et les équipes de football qu'elles représentent.</p>
             <ul>
-                <li>-Les équipes qui participent sont tous dans le lycée des métier </li>
-                <li>-De la 3ème prépa métier au BTS 2ème année </li>
-                <li>-Les équipes sont composées de 5 joueurs et 2 remplaçants </li>
+                <li>Les équipes participantes sont toutes issues du lycée des métiers.</li>
+                <li>Elles vont de la 3ème prépa métiers au BTS 2ème année.</li>
+                <li>Les équipes sont composées de 5 joueurs et 2 remplaçants.</li>
+                <li>Chaque équipe est représentée par une équipe de football qu'elle a choisie.</li>
             </ul>
         </section>
 
         <section id="Classementetdéroulement" class="fade-in">
             <h2><a href="classementetderoulement.html"><u>Classement et Déroulement</u></a></h2>
-            <p>Vous trouverez le classement mise a jour toutes les semaines et le déroulement des matchs.</p>
+            <p>Vous trouverez le classement mis à jour chaque semaine et le déroulement des matchs.</p>
             <ul>
-                <li>-Le classement est mise a jour chaque semaine par Loïc.</li>
-                <li>-Pour le déroulement des match chaque équipe de 5 joueur minimum </li>
-                <li>Chaque mercredi a 12h45 il faut être devant le gymnase et attendre Loic pour entrer et aller se changer </li>
-                <LI>-Chaque match dure 15 minutes et il y a 2 match par jour (aller et reour) </LI>
-                <li>-Chaque victoire vous raporte 3 pts, un nul raporte 1 pts et une defaite 0 pts</li>
+                <li>Le classement est mis à jour chaque semaine par Loïc.</li>
+                <li>Pour le déroulement des matchs, chaque équipe doit avoir au minimum 5 joueurs.</li>
+                <li>Chaque mercredi à 12h45, il faut être devant le gymnase et attendre Loïc pour entrer et se changer.</li>
+                <li>Chaque match dure 15 minutes et il y a 2 matchs par jour (aller et retour).</li>
+                <li>Chaque victoire rapporte 3 points, un match nul rapporte 1 point et une défaite 0 point.</li>
             </ul>
         </section>
 
-      
+        <section id="Calendrier" class="fade-in">
+            <h2><a href="Calendrier.html"><u>Calendrier</u></a></h2>
+            <h2>Calendrier</h2>
+            <p>-Le calendrier des matchs à venir pour le mercredi suivants.</p>
+            <p>-Quand tout les matchs ont étaient jouer le classemen t finale nous done les affiche des quart de finale</p>
+            <p>-Après les quard de finale on tire les demi-finale puis on aura la finale </p>
+        </section>
+    </main>
+  
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Sélectionner tous les éléments avec la classe "fade-in"
-        const fadeElements = document.querySelectorAll('.fade-in');
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
 
-        // Fonction pour vérifier si l'élément est visible
-        function checkVisibility() {
-            fadeElements.forEach(el => {
-                const rect = el.getBoundingClientRect();
-                const viewHeight = Math.min(window.innerHeight, document.documentElement.clientHeight);
-                
-                if (!(rect.bottom < 0 || rect.top - viewHeight >= 0)) {
-                    el.classList.add('visible');
-                }
-            });
-        }
+            function checkVisibility() {
+                fadeElements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    const viewHeight = Math.min(window.innerHeight, document.documentElement.clientHeight);
 
-        // Appel de la fonction au chargement de la page
-        checkVisibility();
+                    if (!(rect.bottom < 0 || rect.top - viewHeight >= 0)) {
+                        el.classList.add('visible');
+                    }
+                });
+            }
 
-        // Appel de la fonction lors du défilement
-        window.addEventListener('scroll', checkVisibility);
-    });
+            checkVisibility();
+            window.addEventListener('scroll', checkVisibility);
+        });
     </script>
 </body>
 </html>

@@ -4,13 +4,16 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
-  }
-  
-  h1, h2, h3, h5, h6, h7 {
     text-align: center;
-    color: #004d99;
   }
-  
+
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 50px; /* Texte très grand */
+    color: #004d99;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+
   #BTS\ Ciel, #BTS\ Eclec, #3ème\ PM, #2nd, #Bac\ pro {
     background: white;
     border: 1px solid #ddd;
@@ -20,26 +23,17 @@ body {
     padding: 20px;
     width: 80%;
   }
-  
+
   .fit-picture {
     display: block;
-    max-width: 100%;
-    height: auto;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
     margin: 10px auto;
     border-radius: 8px;
   }
-  
+
   img {
     border: 2px solid #ddd;
     border-radius: 5px;
   }
-  
-  h7 {
-    font-size: 16px;
-    font-weight: bold;
-  }
-  
-  h6 {
-    margin-top: 10px;
-  }
-  

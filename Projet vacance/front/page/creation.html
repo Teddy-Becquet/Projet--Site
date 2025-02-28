@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Création de compte</title>
+    <link rel="stylesheet" href="../style/creation.css">
+</head>
+<body>
+    <div class="container">
+        <form class="creation-compte-form">
+            <h2>Créer un compte</h2>
+            <div class="form-group">
+                <label for="username">Nom d'utilisateur</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirmer le mot de passe</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+            <button type="submit">Créer un compte</button>
+            <div id="message"></div>
+        </form>
+    </div>
+    <script>
+        const creationCompteForm = document.querySelector('.creation-compte-form');
+        const messageDiv = document.getElementById('message');
+
+        creationCompteForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const username = creationCompteForm.username.value;
+            const password = creationCompteForm.password.value;
+            const confirmPassword = creationCompteForm['confirm-password'].value;
+
+            if (password !== confirmPassword) {
+                messageDiv.textContent = 'Les mots de passe ne correspondent pas.';
+                return;
+            }
+
+            messageDiv.textContent = 'Création du compte en cours...';
+
+            try {
+                const response = await fetch('/creation-compte', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ username, password }),
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Erreur HTTP: ${response.status}`);
+                }
+
+                const data = await response.json();
+
+                if (data.success) {
+                    messageDiv.textContent = 'Compte créé avec succès !';
+                    window.location.href = '/login.html';
+                } else {
+                    messageDiv.textContent = data.message || 'Erreur lors de la création du compte.';
+                }
+            } catch (error) {
+                console.error('Erreur de création de compte:', error);
+                messageDiv.textContent = 'Une erreur est survenue lors de la création du compte.';
+            }
+        });
+    </script>
+</body>
+</html>

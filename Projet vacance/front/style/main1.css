@@ -1,0 +1,50 @@
+body {
+  font-family: sans-serif;
+  margin: 0; /* Supprimer les marges par défaut du body */
+  display: flex;
+  justify-content: center; /* Centrer horizontalement */
+  align-items: center; /* Centrer verticalement */
+  min-height: 100vh; /* Assurer que le body prend au moins toute la hauteur de la fenêtre */
+}
+
+.classement-container {
+  width: 90%; /* Ajuster la largeur du conteneur selon vos besoins */
+  max-width: 1200px; /* Limiter la largeur maximale pour les grands écrans */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  overflow: hidden; /* Empêcher le contenu de déborder */
+}
+
+h2 {
+  text-align: center;
+  margin: 20px 0;
+  color: #333;
+}
+
+.classement-header {
+  display: flex;
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.classement-row {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+}
+
+.header-cell,
+.cell {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+}
+
+.classement-row:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.classement-row:hover {
+  background-color: #f0f0f0;
+}

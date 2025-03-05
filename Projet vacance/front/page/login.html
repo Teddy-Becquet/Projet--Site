@@ -19,60 +19,7 @@
                 <input type="password" id="password" name="password" required>
             </div>
             <button type="submit">Se connecter</button>
-            <div id="message"></div>
-            <p>Pas de compte ? <a href="../page/creation.html">Créer un compte</a></p>
         </form>
     </div>
-    <script>
-        // Sélectionne le formulaire de connexion
-        const loginForm = document.querySelector('.login-form');
-        // Sélectionne la div pour afficher les messages
-        const messageDiv = document.getElementById('message');
-
-        // Ajoute un écouteur d'événement pour la soumission du formulaire
-        loginForm.addEventListener('submit', async (event) => {
-            // Empêche le comportement par défaut du formulaire (rechargement de la page)
-            event.preventDefault();
-
-            // Récupère les valeurs du nom d'utilisateur et du mot de passe
-            const username = loginForm.username.value;
-            const password = loginForm.password.value;
-
-            // Affiche un message de chargement
-            messageDiv.textContent = 'Connexion en cours...';
-
-            try {
-                // Envoie une requête POST au serveur pour la connexion
-                const response = await fetch('/login', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ username, password }),
-                });
-
-                // Vérifie si la réponse du serveur est OK
-                if (!response.ok) {
-                    throw new Error(`Erreur HTTP: ${response.status}`);
-                }
-
-                // Parse la réponse JSON
-                const data = await response.json();
-
-                // Vérifie si la connexion a réussi
-                if (data.success) {
-                    // Redirige vers la page d'accueil
-                    window.location.href = '/acceuil.html';
-                } else {
-                    // Affiche un message d'erreur si les identifiants sont incorrects
-                    messageDiv.textContent = 'Identifiants incorrects.';
-                }
-            } catch (error) {
-                // Affiche un message d'erreur en cas de problème de connexion
-                console.error('Erreur de connexion:', error);
-                messageDiv.textContent = 'Une erreur est survenue lors de la connexion.';
-            }
-        });
-    </script>
 </body>
 </html>

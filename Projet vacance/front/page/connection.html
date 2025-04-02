@@ -3,93 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription et Connexion</title>
+    <title>Connexion</title>
     <link rel="stylesheet" href="../style/connection.css">
+    <script src="script.js"></script>
 </head>
 <body>
-    <h1>Inscription et Connexion</h1>
-    <div class="container">
-        <!-- Formulaire d'inscription -->
-        <div class="form-container">
-            <h2>Inscription</h2>
-            <form id="registerForm">
-                <input type="text" id="registerUsername" placeholder="Nom d'utilisateur" required>
-                <input type="password" id="registerPassword" placeholder="Mot de passe" required>
-                <!-- J'ai mis une balise "<br>" mais je risque je l'enlever-->
-                <br>
-                <button type="submit">S'inscrire</button>
-            </form>
-        </div>
+    <div class="login-container">
+        <h2>Connexion</h2>
+        <form action="#" method="POST">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
 
-        <!-- Formulaire de connexion -->
-        <div class="form-container">
-            <h2>Connexion</h2>
-            <form id="loginForm">
-                <input type="text" id="loginUsername" placeholder="Nom d'utilisateur" required>
-                <input type="password" id="loginPassword" placeholder="Mot de passe" required>
-                <button type="submit" src="index.html">Se connecter</button>
-                <p class="error" id="loginErrorMessage"></p>
-            </form>
-        </div>
+            <label for="password">Mot de passe</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Se connecter</button>
+        </form>
+        <p class="register-link">Pas encore de compte ? <a href="#">Inscrivez-vous</a></p>
     </div>
-    <footer>
-        <center>
-            <p>Suivez-nous sur : 
-                <a href="https://facebook.com" target="_blank">Facebook</a> | 
-                <a href="https://tiktok.com" target="_blank">Tiktok</a> | 
-                <a href="https://instagram.com" target="_blank">Instagram</a>
-            </p>
-            <p>Contactez-nous : 
-                <a href="mailto:j.akenande@la-providence.net">j.akenande@la-providence.net</a>
-            </p>   
-            <p>&copy; 2025 Plateforme de Classement. Tous les droits nous sont réservés.</p>
-        </center>       
-    </footer>
-    <script>
-        // Gestion de l'inscription
-        document.getElementById('registerForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const username = document.getElementById('registerUsername').value;
-            const password = document.getElementById('registerPassword').value;
-
-            const response = await fetch('http://192.168.64.175:9100/inscription', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ username, password })
-            });
-
-            if (response.ok) {
-                alert('Inscription réussie');
-                window.location.href = 'connexion.html';
-            } else {
-                alert('Erreur lors de l\'inscription');
-            }
-        });
-
-        // Gestion de la connexion
-        document.getElementById('loginForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const username = document.getElementById('loginUsername').value;
-            const password = document.getElementById('loginPassword').value;
-            const errorMessage = document.getElementById('loginErrorMessage');
-
-            errorMessage.textContent = "";
-
-            const response = await fetch('http://192.168.64.175:9100/login', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ username, password })
-            });
-
-            const data = await response.json();
-
-            if (response.ok && data.accessToken) {
-                document.cookie = `token=${data.accessToken}; path=/; Secure; HttpOnly`;
-                window.location.href = '/admin-dashboard.html';
-            } else {
-                errorMessage.textContent = "Identifiants incorrects.";
-            }
-        });
-    </script>
 </body>
 </html>

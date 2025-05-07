@@ -1,0 +1,126 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    padding-top: 50px; /* Espace pour éviter que la navbar cache le contenu */
+}
+
+nav {
+    background-color: #333;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    position: fixed; /* Fixe la barre en haut */
+    top: 0;
+    left: 0;
+    width: 100%; /* Pleine largeur */
+    height: 20px;
+    z-index: 1000; /* Toujours au-dessus des autres éléments */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Section styles */
+section {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 1px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+    position: relative;
+    top: 8px; /* Positionne le titre en dessous de la navbar */
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Specific styles for the "Classement" section */
+#classement {
+    margin-top: 20px;
+}
+
+#classement th {
+    background-color: #0044cc;
+}
+
+#classement td {
+    background-color: #e7f2ff;
+}
+
+/* Specific styles for the "Utilisateurs" section */
+#usersTable {
+    margin-top: 20px;
+}
+
+#usersTable th {
+    background-color: #4CAF50;
+}
+
+#usersTable td {
+    background-color: #d9f7d9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    table {
+        font-size: 14px;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}

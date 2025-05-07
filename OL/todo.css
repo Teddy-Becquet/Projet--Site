@@ -1,0 +1,38 @@
+/* Mise en page globale */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Bandeau haut */
+  .bandeau {
+    background-color: #007BFF;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 32px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Contenu central */
+  .contenu {
+    flex: 1; /* Prend tout l’espace disponible */
+    padding: 20px;
+  }
+  
+  /* Pied de page */
+  .pied-de-page {
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 20px;
+  }
